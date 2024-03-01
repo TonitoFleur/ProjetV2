@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div>
+      <p>Annonces : Réductions de 30% pour la Saint Valentin sur tout nos vêtements pour femmes !!! (valable jusqu'au 31/02/2024)</p>
+    </div>
+    <div>
+      <p>Ce site web utilise des cookies</p>
+    </div>
+
+    <div class="text-center px-80 py-14 ">
+      {% if nom %}
+      <h2 class="text-4xl">Bienvenu {{ nom }} sur Amazonite, votre marché en ligne préféré !</h2>
+      {% else %}
+      <h2 class="text-4xl">Bienvenu sur Amazonite, votre marché en ligne préféré !</h2>
+      {% endif %}
+    </div>
+    <section class="grid grid-cols-3 gap-14 p-10">
+
+
+{% endblock %}
