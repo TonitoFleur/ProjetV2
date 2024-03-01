@@ -1,10 +1,10 @@
 from flask import Flask, render_template
 
-app = Flask("test")
+app = Flask("ecommerce")
 
 @app.route("/")
 def index():
-  return render_template("index.html")
+  return render_template("accueil.html")
 
 @app.route('/register')
 def register():
