@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="static/style.css" rel="stylesheet">
+  <title>Document</title>
+
+</head>
+<body>
+  <header class="bg-teal-200 flex justify-between p-10">
+    <h1 class="text-3xl font-semibold">Amazonite</h1>
+    <nav>
+      <ul class="flex space-x-10 text-xl font-medium">
+        <li><a href="/">ACCUEIL</a></li>
+        <li><a href="">Se connecter</a></li>
+        <li><a href="">S'enregistrer</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="bg-teal-100">
+  {% block content %}
+
+  {% endblock %}
+  </main>
+
+  <footer class="bg-teal-400 p-6 text-center">
+    <p>Copyright Antoine, Arthur, Edouard&copy;</p>
+    <p>Contact : info@...</p>
+  </footer>
+
+</body>
+</html>
