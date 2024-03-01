@@ -26,4 +26,4 @@ def phones():
 def clothes():
   return render_template("clothes.html")
 
-app.run(host="0.0.0.0", port=81)
+app.run(host="0.0.0.0", port=82)
