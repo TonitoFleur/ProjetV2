@@ -5,6 +5,10 @@ app = Flask("ecommerce")
 @app.route("/")
 def index():
   return render_template("accueil.html")
+  
+@app.route("/login")
+def login():
+  return render_template("login.html")
 
 @app.route('/register')
 def register():
