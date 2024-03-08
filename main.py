@@ -2,6 +2,20 @@ from flask import Flask, render_template
 
 app = Flask("ecommerce")
 
+# BDD TEST
+
+@app.route('/test')
+def test():
+  db_test = mongo.db.test
+  test = db_test.find({})
+  return render_template('test.html', test=test)
+  
+# Section BDD
+
+
+
+# Fin Section BDD
+
 @app.route("/")
 def index():
   return render_template("accueil.html")
