@@ -6,13 +6,14 @@ import pymongo
 # import de sécurité 
 import os
 
+
 # pour crypter les mots de passe
 import bcrypt
 
 # Pour gérer les ObjectId 
 from bson.objectid import ObjectId
 
-app = Flask("Mon Site")
+app = Flask("ecommerce")
 # Début de mon code
 
 #Connexion a la bdd 
@@ -20,6 +21,7 @@ mongo = pymongo.MongoClient(os.getenv("AMAZONITE_DB"))
 
 # Cookie de la session utilisateur 
 #app.secret_key = os.getenv("COOKIES_KEY")
+
 # BDD TEST
 
 @app.route('/test')
