@@ -2,14 +2,14 @@
 
 {% block content %}
 
-    <div>
+    <div id="annonces-accueil">
       <p>Annonces : Réductions de 30% pour la Saint Valentin sur tout nos vêtements pour femmes !!! (valable jusqu'au 31/02/2024)</p>
     </div>
-    <div>
+    <div id="cookies-accueil">
       <p>Ce site web utilise des cookies</p>
     </div>
 
-    <div class="text-center px-80 py-14 ">
+    <div id="intro-accueil" class="text-center px-80 py-14 ">
       {% if nom %}
       <h2 class="text-4xl">Bienvenu {{ nom }} sur Amazonite, votre marché en ligne préféré !</h2>
       {% else %}
@@ -17,16 +17,16 @@
       {% endif %}
     </div>
     <section class="grid grid-cols-3 gap-14 p-10">
-      <div class="">
+      <div id="chauss-accueil">
         <h1>Voir les chaussures</h1>
         <img src=""/>
       </div>
-      <div class="">
+      <div id="vêt-accueil">
         <h1>Voir les vêtements</h1>
         <img src=""/>
       </div>
-      <div class="">
-        <h1>Voir les appereils électroniques</h1>
+      <div id="appelec-accueil">
+        <h1>Voir les appareils électroniques</h1>
         <img src=""/>
       </div>
 
