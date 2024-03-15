@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, url_for, redirect, session
 
-app = Flask("ecommerce")
-
 import pymongo
 
 import os
@@ -9,6 +7,10 @@ import os
 import bcrypt
 
 from bson.objectid import ObjectId
+
+app = Flask("ecommerce")
+
+mongo = pymongo.MongoClient(os.getenv("MONGO_DB"))
 # BDD TEST
 
 @app.route('/test')
