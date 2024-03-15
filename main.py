@@ -2,6 +2,9 @@ from flask import Flask, render_template
 
 app = Flask("ecommerce")
 
+import pymongo
+
+import os
 # BDD TEST
 
 @app.route('/test')
