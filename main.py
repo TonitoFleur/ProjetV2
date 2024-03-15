@@ -1,10 +1,25 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, redirect, session
 
-app = Flask("ecommerce")
-
+#import pymongo pour l'utiliser dans replit
 import pymongo
 
+# import de sécurité 
 import os
+
+# pour crypter les mots de passe
+import bcrypt
+
+# Pour gérer les ObjectId 
+from bson.objectid import ObjectId
+
+app = Flask("Mon Site")
+# Début de mon code
+
+#Connexion a la bdd 
+mongo = pymongo.MongoClient(os.getenv("AMAZONITE_DB"))
+
+# Cookie de la session utilisateur 
+#app.secret_key = os.getenv("COOKIES_KEY")
 # BDD TEST
 
 @app.route('/test')
