@@ -1,10 +1,14 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, url_for, redirect, session
 
 app = Flask("ecommerce")
 
 import pymongo
 
 import os
+
+import bcrypt
+
+from bson.objectid import ObjectId
 # BDD TEST
 
 @app.route('/test')
