@@ -33,15 +33,13 @@
 
     <!-- section d'une ligne d'article -->
       <section class="grid grid-cols-4 gap-20 p-10">
-        {% for annonce in annonces %}
         <article class="bg-white shadow-xl p-3 border-orange-200 border-solid border-2 rounded-lg">
-          <h3 class="text-lg text-center pb-2">{{annonce["titre"]}}</h3>
+          <h3 class="text-lg text-center pb-2">titre</h3>
           <hr>
-          <p class="pt-2">Activité proposée par : <b>{{annonce["auteur"]}}</b></p>
-          <p class="pt-4">{{annonce["description"]}}</p>
-          <p class="pt-4"><b class="text-red-500">Conclusion</b> {{annonce["conclusion"]}}</p>
+          <p class="pt-2">Activité proposée par : <b>auteur</b></p>
+          <p class="pt-4">description</p>
+          <p class="pt-4"><b class="text-red-500">Conclusion</b> conclusion</p>
         </article>
-        {% endfor %}
       </section>
 
 
