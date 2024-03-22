@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="grid grid-cols-4 gap-20 p-10">
+
+      <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+        <a href="/annonce/{{annonce['_id']}}">
+        <h3 class="text-lg text-center pb-2"> <b>titre de l'annonce</b></h3>
+        </a>
+        <hr>
+        <p class ="pt-2">Prix de l'article : <b>150 euros</b></p>
+        <img class="pt-4 px-10 scale-110" src="https://i.goopics.net/p7ds6c.jpg"/>
+      </article>
+    </section>
+{% endblock %}
