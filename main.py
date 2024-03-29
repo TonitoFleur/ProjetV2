@@ -63,5 +63,9 @@ def phones():
 @app.route('/clothes')
 def clothes():
   return render_template("clothes.html")
-
+  
+@app.route("/annonce")
+def annonce():
+  return render_template("annonce.html")
+  
 app.run(host="0.0.0.0", port=81)
