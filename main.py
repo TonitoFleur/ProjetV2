@@ -19,7 +19,7 @@ app = Flask("ecommerce")
 mongo = pymongo.MongoClient(os.getenv("AMAZONITE_DB"))
 
 # Cookie de la session utilisateur
-#app.secret_key = os.getenv("COOKIES_KEY")
+app.secret_key = os.getenv("COOKIES_KEY")
 
 # BDD TEST
 
@@ -46,9 +46,28 @@ def login():
   return render_template("login.html")
 
 
-@app.route('/register')
+@app.route('/register', methods=['POST','GET'])
 def register():
-  return render_template("register.html")
+  if request.method == 'POST':
+    db_utils = mongo.db.utilisateurs
+    if (db_utils.find_one({'nom': request.form['utilisateur']})):
+      return render_template('register.html',
+                             erreur="Le nom d'utilisateur existe deja")
+    else:
+      if (request.form['mot_de_passe'] == request.form['verif_mot_de_passe']):
+        mdp_encrypte = bcrypt.hashpw(
+          request.form['mot_de_passe'].encode('utf-8'), bcrypt.gensalt())
+        db_utils.insert_one({
+          'nom': request.form['utilisateur'],
+          'mdp': mdp_encrypte,
+          'role' : "abonné"
+        })
+        session['util'] = request.form['utilisateur']
+        return redirect(url_for('accueil'))
+      else:
+        return render_template("register.html")
+  else:
+    return render_template("register.html")
 
 
 @app.route('/contact')
