@@ -41,9 +41,27 @@ def accueil():
   return render_template("accueil.html")
 
 
-@app.route("/login")
+@app.route('/login', methods=['POST','GET'])
 def login():
-  return render_template("login.html")
+  if request.method == 'POST':
+    db_utils = mongo.db.utilisateurs
+    util = db_utils.find_one({'nom': request.form['utilisateur']})
+    if util:
+      if bcrypt.checkpw(request.form['mot_de_passe'].encode('utf-8'), util['mdp']):
+        session['util'] = request.form['utilisateur']
+        return redirect(url_for('accueil'))
+      else:
+        return render_template('login.html', erreur="Mauvais mdp")
+    else:
+      return render_template('login.html', erreur="Mauvais utilisateur")
+  else:
+    return render_template('login.html')
+
+
+@app.route('/logout')
+def logout():
+  session.clear()
+  return redirect(url_for('accueil'))
 
 
 @app.route('/register', methods=['POST','GET'])
@@ -60,7 +78,7 @@ def register():
         db_utils.insert_one({
           'nom': request.form['utilisateur'],
           'mdp': mdp_encrypte,
-          'mail' : request.form['mail']
+          'mail' : request.form['mail'],
           'role' : "abonné"
         })
         session['util'] = request.form['utilisateur']
