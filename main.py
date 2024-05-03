@@ -37,7 +37,7 @@ def test():
 
 
 @app.route("/")
-def index():
+def accueil():
   return render_template("accueil.html")
 
 
@@ -60,6 +60,7 @@ def register():
         db_utils.insert_one({
           'nom': request.form['utilisateur'],
           'mdp': mdp_encrypte,
+          'mail' : request.form['mail']
           'role' : "abonné"
         })
         session['util'] = request.form['utilisateur']
