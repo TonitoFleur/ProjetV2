@@ -2,19 +2,76 @@
 
 {% block content %}
 
-    <div id="annonces-accueil" class="bg-slate-400 p-2">
-      <p class="text-center font-semibold">Annonces : Réductions de 30% sur tout nos vêtements pour femmes !!! (valable jusqu'au 31/07/2024)</p>
-    </div>
-    <div id="cookies-accueil">
-      <p class="text-red-600 font-bold text-center bg-slate-300 p-1">Ce site web utilise des cookies !!!</p>
-    </div>
+<div id="annonces-accueil" class="bg-slate-400 p-2">
+  <p class="text-center font-semibold">Annonces : Réductions de 30% sur tout nos vêtements pour femmes !!! (valable jusqu'au 31/07/2024)</p>
+</div>
+<div id="cookies-accueil">
+  <p class="text-red-600 font-bold text-center bg-slate-300 p-1">Ce site web utilise des cookies !!!</p>
+</div>
 
-    <div id="intro-accueil" class="text-center px-80 py-14 ">
-      {% if nom %}
-      <h2 class="text-4xl">Bienvenue {{ nom }} sur Amazonite, votre marché en ligne préféré !</h2>
-      {% else %}
-      <h2 class="text-4xl">Bienvenue sur Amazonite, votre marché en ligne préféré !</h2>
-      {% endif %}
-    </div>
+<div id="intro-accueil" class="text-center px-80 py-14 ">
+  {% if nom %}
+  <h2 class="text-4xl">Bienvenue {{ nom }} sur Amazonite, votre marché en ligne préféré !</h2>
+  {% else %}
+  <h2 class="text-4xl">Bienvenue sur Amazonite, votre marché en ligne préféré !</h2>
+  {% endif %}
+</div>
+
+<h3 class="text-3xl font-bold text-center">Top ventes</h3>
+
+
+<section class="grid grid-cols-4 gap-20 p-10">
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"> <b>Dunk</b></h3>
+    <hr>
+    <p class ="pt-2">Prix de l'article : <b>120€</b></p>
+    <img class="pt-4 px-10 scale-110" src="https://i.goopics.net/cx5lcg.png"/>
+  </article>
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid  border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"><b>Dunk</b></h3>
+    <hr>
+    <p class="pt-2">Prix de l'article : <b>215€</b></p>
+    <img class="pt-4 px-10" <img src="https://i.goopics.net/cwxegh.png"/>
+  </article>
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid  border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"><b>Dunk</b></h3>
+    <hr>
+    <p class ="pt-2">Prix de l'article : <b>230€</b></p>
+    <img class="pt-3 px-10" src="https://i.goopics.net/biaqlw.png"/>
+  </article>
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid  border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"><b>Dunk</b></h3>
+    <hr>
+    <p class ="pt-2">Prix de l'article : <b>300€</b></p>
+    <img class="pt-4 px-10 scale-110" src="https://i.goopics.net/1qwt48.png"/>
+  </article>
+</section>
+
+<section class="grid grid-cols-4 gap-20 p-10">
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"> <b>Dunk</b></h3>
+    <hr>
+    <p class ="pt-2">Prix de l'article : <b>120€</b></p>
+    <img class="pt-3 px-10 scale-100" src="https://i.goopics.net/cosbq1.png"/>
+  </article>
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid  border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"><b>Dunk</b></h3>
+    <hr>
+    <p class="pt-2">Prix de l'article : <b>215€</b></p>
+    <img class="pt-4 px-10" <img src="https://i.goopics.net/fqnm6d.png"/>
+  </article>
+  <article class="bg-teal-200 shadow-2xl p-3 border-teal-500 border-solid border-2 rounded-xl transition duration-300 transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"><b>Dunk</b></h3>
+    <hr>
+    <p class ="pt-2">Prix de l'article : <b>230€</b></p>
+    <img class="pt-3 px-10" src="https://i.goopics.net/biaqlw.png"/>
+  </article>
+  <article class="bg-teal-200 shadow-2xl p-3 border-2 border-teal-500 border-solid transition duration-800 rounded-xl transform scale-100 hover:scale-110">
+    <h3 class="text-lg text-center pb-2"><b>Dunk</b></h3>
+    <hr>
+    <p class ="pt-2">Prix de l'article : <b>300€</b></p>
+    <img class="pt-4 px-10 scale-110" src="https://i.goopics.net/1qwt48.png"/>
+  </article>
+</section>
 
 {% endblock %}
