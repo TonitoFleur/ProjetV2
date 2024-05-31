@@ -41,13 +41,14 @@ def accueil():
   return render_template("accueil.html")
 
 
-@app.route('/login', methods=['POST','GET'])
+@app.route('/login', methods=['POST', 'GET'])
 def login():
   if request.method == 'POST':
     db_utils = mongo.db.utilisateurs
     util = db_utils.find_one({'nom': request.form['utilisateur']})
     if util:
-      if bcrypt.checkpw(request.form['mot_de_passe'].encode('utf-8'), util['mdp']):
+      if bcrypt.checkpw(request.form['mot_de_passe'].encode('utf-8'),
+                        util['mdp']):
         session['util'] = request.form['utilisateur']
         return redirect(url_for('accueil'))
       else:
@@ -64,7 +65,7 @@ def logout():
   return redirect(url_for('accueil'))
 
 
-@app.route('/register', methods=['POST','GET'])
+@app.route('/register', methods=['POST', 'GET'])
 def register():
   if request.method == 'POST':
     db_utils = mongo.db.utilisateurs
@@ -74,12 +75,12 @@ def register():
     else:
       if (request.form['mot_de_passe'] == request.form['verif_mot_de_passe']):
         mdp_encrypte = bcrypt.hashpw(
-          request.form['mot_de_passe'].encode('utf-8'), bcrypt.gensalt())
+            request.form['mot_de_passe'].encode('utf-8'), bcrypt.gensalt())
         db_utils.insert_one({
-          'nom': request.form['utilisateur'],
-          'mdp': mdp_encrypte,
-          'mail' : request.form['mail'],
-          'role' : "abonné"
+            'nom': request.form['utilisateur'],
+            'mdp': mdp_encrypte,
+            'mail': request.form['mail'],
+            'role': "abonné"
         })
         session['util'] = request.form['utilisateur']
         return redirect(url_for('accueil'))
@@ -107,9 +108,24 @@ def phones():
 @app.route('/clothes')
 def clothes():
   return render_template("clothes.html")
-  
+
+
 @app.route("/annonce")
 def annonce():
   return render_template("annonce.html")
-  
+
+
+# admin
+
+
+@app.route('/admin/sneakers')
+def admin_sneakers():
+  return render_template("/admin/sneakers.html")
+
+
+@app.route('/admin/clothes')
+def admin_clothes():
+  return render_template("/admin/clothes.html")
+
+
 app.run(host="0.0.0.0", port=81)
