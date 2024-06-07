@@ -114,6 +114,13 @@ def clothes():
 def annonce():
   return render_template("annonce.html")
 
+# route d'un evenement
+@app.route("/articleclothes/<id_post>")
+def clothe(id_post):
+  db_clothes = mongo.db.clothes
+  clothe = db_clothes.find_one({"_id": ObjectId(id_post)})
+  return render_template("articleclothes.html", clothe=clothe)
+
 
 # admin
 

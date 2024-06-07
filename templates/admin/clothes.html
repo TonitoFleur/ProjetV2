@@ -1,23 +1,30 @@
-{% extends 'admin/base.html' %}
-
-{% block content %}
-<table>
-  <thead>
-    <tr>
-      <th>Nom</th>
-      <th>Prix</th>
-      <th>Image</th>
-    </tr>
-  </thead>
-  <tbody>
-    <!-- {% for clothe in clothes %} -->
-    <tr>
-      <tb>qefoyv</tb>
-      <tb>qdfv £</tb>
-      <!-- <tb>{{clothes["image"]}}</tb> -->
-      </tr>
-    <!-- {% endfor %} -->
-  </tbody>
-  
-</table>
+{%extends './base.html'%}
+{%block content%}
+  <table>
+      <thead>
+          <tr>
+              <th>Nom</th>
+              <th>Prix</th>
+              <th>Image</th>    
+          </tr>
+      </thead>
+      <tbody>
+          <tr>
+              <td>Nike Air</td>
+              <td>120£</td>
+              <td>Image</td>
+              <td class="border border-slate-300 p-2"><a href="" target="_blank">Voir</a></td>
+              <td class="border border-slate-300 p-2"><a href="">Modifier</a></td>
+              <td class="border border-slate-300 p-2"><a href="">Supprimer</a></td>
+          </tr>
+         <!-- {% for cloth in clothes %} -->
+          <tr>
+              <td>Nike Air</td>
+              <td>120£</td>
+              <td>Image</td>
+            <!--  <td>{{cloth["image"]}}</td> -->
+          </tr>
+        <!--  {% endfor %} -->
+      </tbody>
+  </table>
 {% endblock %}
