@@ -104,11 +104,19 @@ def sneakers():
 def phones():
   return render_template("phones.html")
 
-
+# tous les vetements
 @app.route('/clothes')
 def clothes():
-  return render_template("clothes.html")
+  db_articles = mongo.db.articles
+  article = db_articles.find({"categorie" : "clothes"})
+  return render_template("clothes.html", article=article)
 
+# un seul article
+@app.route("/article/<id_post>")
+def article(id_post):
+  db_articles = mongo.db.articles
+  article = db_articles.find_one({"_id": ObjectId(id_post)})
+  return render_template("article.html", article=article)
 
 @app.route("/annonce")
 def annonce():
@@ -132,7 +140,11 @@ def admin_sneakers():
 
 @app.route('/admin/clothes')
 def admin_clothes():
-  return render_template("/admin/clothes.html")
+  db_articles = mongo.db.articles
+  article = db_articles.find({"categorie" : "clothes"})
+  return render_template("/admin/clothes.html", article=article)
+
+
 
 
 app.run(host="0.0.0.0", port=81)

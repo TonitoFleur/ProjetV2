@@ -3,28 +3,24 @@
   <table>
       <thead>
           <tr>
+              <th>Image</th>
               <th>Nom</th>
               <th>Prix</th>
-              <th>Image</th>    
+              <th>Description</th>    
           </tr>
       </thead>
-      <tbody>
-          <tr>
-              <td>Nike Air</td>
-              <td>120£</td>
-              <td>Image</td>
-              <td class="border border-slate-300 p-2"><a href="" target="_blank">Voir</a></td>
-              <td class="border border-slate-300 p-2"><a href="">Modifier</a></td>
-              <td class="border border-slate-300 p-2"><a href="">Supprimer</a></td>
-          </tr>
-         <!-- {% for cloth in clothes %} -->
-          <tr>
-              <td>Nike Air</td>
-              <td>120£</td>
-              <td>Image</td>
-            <!--  <td>{{cloth["image"]}}</td> -->
-          </tr>
-        <!--  {% endfor %} -->
-      </tbody>
+        <tbody>
+            {% for article in article %}
+            <tr>
+                <td><img src="{{article['image']}}" class="pt-2"></td>
+                <td>{{article['titre']}}</td>
+                <td>{{article['prix']}}</td>
+                <td>{{article['description']|truncate(150)}}</td>
+                <td class="border border-slate-300 p-2"><a href="" target="_blank">Voir</a></td>
+                <td class="border border-slate-300 p-2"><a href="">Modifier</a></td>
+                <td class="border border-slate-300 p-2"><a href="">Supprimer</a></td>
+            </tr>
+          {% endfor %} 
+        </tbody>
   </table>
 {% endblock %}
